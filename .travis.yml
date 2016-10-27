@@ -7,6 +7,9 @@ install:
 - npm install --global ied
 - npm install --global grunt-cli
 
+script:
+- php -v
+
 notifications:
  email:
  - team@redaxscript.com
