@@ -1,0 +1,26 @@
+{
+	"name": "redaxmedia/redaxscript-file-sync",
+	"description": "Ultra lightweight Content Management System",
+	"version": "3.0.0",
+	"homepage": "http://redaxscript.com",
+	"license": "GPL-3.0",
+	"require":
+	{
+		"php": ">5.4"
+	},
+	"require-dev":
+	{
+		"redaxmedia/redaxscript": "dev-master"
+	},
+	"scripts":
+	{
+		"post-install-cmd":
+		[
+			"php -r \"!is_file('vendor/j4mie/idiorm/idiorm.php') || rename('vendor/j4mie/idiorm/idiorm.php', 'vendor/j4mie/idiorm/ORM.php');\""
+		],
+		"post-update-cmd":
+		[
+			"@post-install-cmd"
+		]
+	}
+}
