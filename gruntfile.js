@@ -6,7 +6,7 @@ module.exports = function (grunt)
 
 	grunt.initConfig(
 	{
-		version: grunt.file.readJSON('package.json').version,
+		version: grunt.file.readJSON('vendor/redaxmedia/redaxscript/package.json').version,
 		shell:
 		{
 			removeBuild:
@@ -79,24 +79,6 @@ module.exports = function (grunt)
 					archive: 'build/releases/redaxscript-<%= version %>-lite.zip'
 				}
 			}
-		},
-		deployFTP:
-		{
-			files:
-			{
-				src:
-				[
-					'build'
-				],
-				dest: 'files',
-				auth:
-				{
-					host: 'develop.redaxscript.com',
-					port: 21,
-					authKey: 'develop',
-					authPath: '../credentials/.redaxscript'
-				}
-			}
 		}
 	});
 
@@ -104,24 +86,24 @@ module.exports = function (grunt)
 
 	grunt.dynamicCompress = function (cwd, path)
 	{
-		var target = grunt.file.expand(cwd + path),
-			targetArray;
+		var directoryArray = grunt.file.expand(cwd + path),
+			infoArray;
 
-		for (var i in target)
+		for (var i in directoryArray)
 		{
-			targetArray = target[i].replace(cwd, '').split('.');
-			grunt.config.set('compress.' + targetArray[0],
+			infoArray = directoryArray[i].replace(cwd, '').split('.');
+			grunt.config.set('compress.' + infoArray[0],
 			{
 				src:
 				[
-					targetArray[1] ? targetArray[0] : targetArray[0] + '/**'
+					infoArray[1] ? infoArray[0] + '.' + infoArray[1] : infoArray[0] + '/**'
 				],
 				cwd: cwd,
 				expand: true,
 				dot: true,
 				options:
 				{
-					archive: 'build/' + targetArray[0] + '.zip'
+					archive: 'build/' + infoArray[0] + '.zip'
 				}
 			});
 		}
@@ -134,19 +116,11 @@ module.exports = function (grunt)
 
 	require('load-grunt-tasks')(grunt);
 
-	/* rename tasks */
-
-	grunt.task.renameTask('ftp-deploy', 'deployFTP');
-	
 	/* register tasks */
 
 	grunt.registerTask('default',
 	[
 		'shell:removeBuild',
 		'compress'
-	]);
-	grunt.registerTask('deploy',
-	[
-		'deployFTP'
 	]);
 };
