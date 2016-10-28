@@ -1,4 +1,3 @@
-sudo: required
 language: php
 
 php:
@@ -8,19 +7,19 @@ before_install:
 - composer global require hirak/prestissimo
 
 install:
+- sudo apt-get install wput
 - composer self-update
 - composer install
 - nvm install 6
 - npm install --global ied
 - npm install --global grunt-cli
 - ied install
-- sudo apt-get install wput
 
 script:
 - grunt
 
 after_script:
-- wput build FTP_URL
+- wput build $FTP_URL
 
 notifications:
  email:
