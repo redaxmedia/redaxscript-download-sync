@@ -19,7 +19,7 @@ script:
 - grunt
 
 after_script:
-- wput build $FTP_URL
+- cd build && wput . $FTP_URL --reupload
 
 notifications:
  email:
