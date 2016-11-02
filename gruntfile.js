@@ -110,7 +110,9 @@ module.exports = function (grunt)
 	};
 	grunt.dynamicCompress('vendor/redaxmedia/redaxscript/', 'languages/*.json');
 	grunt.dynamicCompress('vendor/redaxmedia/redaxscript/', 'modules/*');
-	grunt.dynamicCompress('vendor/redaxmedia/redaxscript/', 'templates/*');
+	grunt.dynamicCompress('vendor/redaxmedia/redaxscript/', 'templates/default');
+	grunt.dynamicCompress('vendor/redaxmedia/redaxscript/', 'templates/skeleton');
+	grunt.dynamicCompress('vendor/redaxmedia/redaxscript/', 'templates/wide');
 
 	/* load tasks */
 
