@@ -7,7 +7,7 @@ before_install:
 - composer global require hirak/prestissimo
 
 install:
-- sudo apt-get install wput
+- sudo apt-get install wput −−binary
 - composer self-update
 - composer install
 - nvm install 6
