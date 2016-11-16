@@ -7,7 +7,7 @@ before_install:
 - composer global require hirak/prestissimo
 
 install:
-- sudo apt-get install wput −−binary
+- sudo apt-get install wput
 - composer self-update
 - composer install
 - nvm install 6
@@ -19,7 +19,7 @@ script:
 - grunt
 
 after_script:
-- cd build && wput . $FTP_URL --reupload
+- cd build && wput . $FTP_URL --reupload −−binary
 
 notifications:
  email:
