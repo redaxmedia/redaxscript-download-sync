@@ -20,6 +20,8 @@ script:
 
 after_script:
 - cd build && wput . $FTP_URL --reupload
+- wget . $FTP_URL --recursive --no-host-directories --directory-prefix download
+- for i in download/*/*.zip; do unzip -t $i; done
 
 notifications:
  email:
