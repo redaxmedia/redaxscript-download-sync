@@ -19,9 +19,11 @@ script:
 - grunt
 
 after_script:
+- set -e;
+- for file in build/*/*.zip; do unzip -t $file; done;
 - cd build && wput . $FTP_URL --reupload
 - wget . $FTP_URL --recursive --no-host-directories --directory-prefix download
-- set -e; for file in download/*/*.zip; do unzip -t $file; done;
+- for file in download/*/*.zip; do unzip -t $file; done;
 
 notifications:
  email:
