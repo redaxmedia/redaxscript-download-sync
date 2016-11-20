@@ -19,11 +19,10 @@ script:
 - grunt
 
 after_script:
-- set -e;
-- for file in build/*/*.zip; do unzip -t $file; done;
-- cd build && wput . $FTP_URL --reupload
+- sh test.sh build/*/*.zip
+- cd build && wput . $FTP_URL --reupload --binary
 - wget . $FTP_URL --recursive --no-host-directories --directory-prefix download
-- for file in download/*/*.zip; do unzip -t $file; done;
+- sh test.sh download/*/*.zip
 
 notifications:
  email:
