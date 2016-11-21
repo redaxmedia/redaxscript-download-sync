@@ -7,7 +7,6 @@ before_install:
 - composer global require hirak/prestissimo
 
 install:
-- sudo apt-get install wput
 - sudo apt-get install lftp
 - composer self-update
 - composer install
@@ -21,9 +20,8 @@ script:
 
 after_script:
 - sh test.sh build/*/*.zip
-- lftp $FTP_URL -e "rm -rf ."; exit;
-- cd build && wput . $FTP_URL && cd ..
-- wget . $FTP_URL --recursive --no-host-directories --directory-prefix download
+- lftp $FTP_URL -e "glob -d mirror build languages --reverse --delete-first --parallel=10"
+- lftp $FTP_URL -e "glob -d mirror . download --delete-first --parallel=10"
 - sh test.sh download/*/*.zip
 
 notifications:
