@@ -8,6 +8,7 @@ before_install:
 
 install:
 - sudo apt-get install wput
+- sudo apt-get install lftp
 - composer self-update
 - composer install
 - nvm install 6
@@ -20,7 +21,8 @@ script:
 
 after_script:
 - sh test.sh build/*/*.zip
-- cd build && wput . $FTP_URL --reupload --binary && cd ..
+- lftp $FTP_URL -e "rm -rf ."; exit;
+- cd build && wput . $FTP_URL && cd ..
 - wget . $FTP_URL --recursive --no-host-directories --directory-prefix download
 - sh test.sh download/*/*.zip
 
