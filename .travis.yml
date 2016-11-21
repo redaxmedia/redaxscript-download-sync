@@ -20,7 +20,7 @@ script:
 
 after_script:
 - sh test.sh build/*/*.zip
-- cd build && wput . $FTP_URL --reupload --binary
+- cd build && wput . $FTP_URL --reupload --binary && cd ..
 - wget . $FTP_URL --recursive --no-host-directories --directory-prefix download
 - sh test.sh download/*/*.zip
 
