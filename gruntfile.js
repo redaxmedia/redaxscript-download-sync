@@ -26,6 +26,7 @@ module.exports = function (grunt)
 				src:
 				[
 					'assets/**',
+					'cache/**',
 					'database/**',
 					'dist/**',
 					'includes/**',
@@ -56,6 +57,7 @@ module.exports = function (grunt)
 				src:
 				[
 					'assets/**',
+					'cache/**',
 					'database/**',
 					'dist/**',
 					'includes/**',
