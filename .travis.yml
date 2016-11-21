@@ -20,8 +20,8 @@ script:
 
 after_script:
 - sh test.sh build/*/*.zip
-- lftp $FTP_URL -e "glob -d mirror build languages --reverse --delete-first --parallel=10"
-- lftp $FTP_URL -e "glob -d mirror . download --delete-first --parallel=10"
+- lftp $FTP_URL -e "glob -d mirror build . --reverse --delete-first --parallel=10 && exit"
+- lftp $FTP_URL -e "glob -d mirror . download --delete-first --parallel=10 && exit"
 - sh test.sh download/*/*.zip
 
 notifications:
