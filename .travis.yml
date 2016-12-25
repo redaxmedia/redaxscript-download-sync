@@ -20,7 +20,7 @@ script:
 - grunt build --gruntfile vendor/redaxmedia/redaxscript/gruntfile.js
 - grunt
 
-after_script:
+after_success:
 - sh validate.sh build/*/*.zip
 - lftp $FTP_URL -e "glob -d mirror build . --reverse --delete-first --parallel=10 && exit"
 - lftp $FTP_URL -e "glob -d mirror . download --delete-first --parallel=10 && exit"
