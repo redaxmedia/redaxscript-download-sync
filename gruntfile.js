@@ -20,7 +20,7 @@ module.exports = function (grunt)
 				{
 					callback: function (error, stdout, stderr, done)
 					{
-						grunt.config.set('commit', stdout);
+						grunt.config.set('commit', stdout.trim());
 						done();
 					}
 				}
