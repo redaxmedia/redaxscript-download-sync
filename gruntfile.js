@@ -13,6 +13,18 @@ module.exports = function (grunt)
 			{
 				command: 'rm -rf build'
 			},
+			getCommit:
+			{
+				command: 'cd vendor/redaxmedia/redaxscript && git rev-parse --short HEAD',
+				options:
+				{
+					callback: function (error, stdout, stderr, done)
+					{
+						grunt.config.set('commit', stdout);
+						done();
+					}
+				}
+			},
 			options:
 			{
 				stdout: true,
@@ -49,7 +61,7 @@ module.exports = function (grunt)
 				dot: true,
 				options:
 				{
-					archive: 'build/releases/redaxscript-<%= version %>-full.zip'
+					archive: 'build/releases/redaxscript-<%= version %>-<%= commit %>-full.zip'
 				}
 			},
 			distLite:
@@ -81,7 +93,7 @@ module.exports = function (grunt)
 				dot: true,
 				options:
 				{
-					archive: 'build/releases/redaxscript-<%= version %>-lite.zip'
+					archive: 'build/releases/redaxscript-<%= version %>-<%= commit %>-lite.zip'
 				}
 			}
 		}
@@ -128,6 +140,7 @@ module.exports = function (grunt)
 	grunt.registerTask('default',
 	[
 		'shell:removeBuild',
+		'shell:getCommit',
 		'compress'
 	]);
 };
