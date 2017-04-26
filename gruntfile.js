@@ -21,6 +21,45 @@ module.exports = function (grunt)
 		},
 		compress:
 		{
+			distDevelop:
+			{
+				src:
+				[
+					'!dist',
+					'assets/**',
+					'benchs/**',
+					'cache/**',
+					'database/**',
+					'includes/**',
+					'languages/**',
+					'modules/**',
+					'templates/**',
+					'tests/**',
+					'config.php',
+					'console.php',
+					'index.php',
+					'install.php',
+					'.htaccess',
+					'.htmlhintrc',
+					'.jscsrc',
+					'.jshintrc',
+					'.stylelintrc',
+					'.tocgen',
+					'composer.json',
+					'gruntfile.js',
+					'package.json',
+					'phpcs.xml',
+					'phpunit.xml',
+					'README.md'
+				],
+				cwd: 'vendor/redaxmedia/redaxscript/',
+				expand: true,
+				dot: true,
+				options:
+				{
+					archive: 'build/releases/redaxscript-<%= version %>-develop.zip'
+				}
+			},
 			distFull:
 			{
 				src:
