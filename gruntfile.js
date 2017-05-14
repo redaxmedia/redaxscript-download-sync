@@ -21,7 +21,7 @@ module.exports = function (grunt)
 		},
 		compress:
 		{
-			distDevelop:
+			distDevelopment:
 			{
 				src:
 				[
@@ -50,17 +50,18 @@ module.exports = function (grunt)
 					'package.json',
 					'phpcs.xml',
 					'phpunit.xml',
-					'README.md'
+					'README.md',
+					'web.config'
 				],
 				cwd: 'vendor/redaxmedia/redaxscript/',
 				expand: true,
 				dot: true,
 				options:
 				{
-					archive: 'build/releases/redaxscript-<%= version %>-develop.zip'
+					archive: 'build/releases/redaxscript-<%= version %>-development.zip'
 				}
 			},
-			distFull:
+			distProductionFull:
 			{
 				src:
 				[
@@ -81,17 +82,18 @@ module.exports = function (grunt)
 					'index.php',
 					'install.php',
 					'README.md',
-					'.htaccess'
+					'.htaccess',
+					'web.config'
 				],
 				cwd: 'vendor/redaxmedia/redaxscript/',
 				expand: true,
 				dot: true,
 				options:
 				{
-					archive: 'build/releases/redaxscript-<%= version %>-full.zip'
+					archive: 'build/releases/redaxscript-<%= version %>-production-full.zip'
 				}
 			},
-			distLite:
+			distProductionLite:
 			{
 				src:
 				[
@@ -113,14 +115,15 @@ module.exports = function (grunt)
 					'index.php',
 					'install.php',
 					'README.md',
-					'.htaccess'
+					'.htaccess',
+					'web.config'
 				],
 				cwd: 'vendor/redaxmedia/redaxscript/',
 				expand: true,
 				dot: true,
 				options:
 				{
-					archive: 'build/releases/redaxscript-<%= version %>-lite.zip'
+					archive: 'build/releases/redaxscript-<%= version %>-production-lite.zip'
 				}
 			}
 		}

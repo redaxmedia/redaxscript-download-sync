@@ -1,7 +1,7 @@
 {
 	"name": "redaxmedia/redaxscript-download-sync",
 	"description": "Yet another cronjob for Redaxscript's website",
-	"version": "3.0.0",
+	"version": "3.1.0",
 	"homepage": "http://redaxscript.com",
 	"license": "GPL-3.0",
 	"require":
@@ -16,7 +16,7 @@
 	{
 		"post-install-cmd":
 		[
-			"cd vendor/redaxmedia/redaxscript && composer install --no-dev"
+			"cd vendor/redaxmedia/redaxscript && composer install"
 		],
 		"post-update-cmd":
 		[
