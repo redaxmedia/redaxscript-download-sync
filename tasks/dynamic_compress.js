@@ -1,6 +1,6 @@
 module.exports = function (grunt, pathArray)
 {
-	var cwd = 'vendor/redaxmedia/redaxscript/',
+	var cwd = 'vendor/redaxscript/redaxscript/',
 		directoryArray,
 		infoArray;
 

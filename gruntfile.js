@@ -6,7 +6,7 @@ module.exports = function (grunt)
 
 	grunt.initConfig(
 	{
-		version: grunt.file.readJSON('vendor/redaxmedia/redaxscript/package.json').version,
+		version: grunt.file.readJSON('vendor/redaxscript/redaxscript/package.json').version,
 		shell: require('./tasks/shell')(grunt),
 		compress: require('./tasks/compress')(grunt)
 	});

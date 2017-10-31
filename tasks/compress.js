@@ -37,7 +37,7 @@ module.exports = function ()
 				'README.md',
 				'web.config'
 			],
-			cwd: 'vendor/redaxmedia/redaxscript/',
+			cwd: 'vendor/redaxscript/redaxscript/',
 			expand: true,
 			dot: true,
 			options:
@@ -66,7 +66,7 @@ module.exports = function ()
 				'.htaccess',
 				'web.config'
 			],
-			cwd: 'vendor/redaxmedia/redaxscript/',
+			cwd: 'vendor/redaxscript/redaxscript/',
 			expand: true,
 			dot: true,
 			options:
@@ -99,7 +99,7 @@ module.exports = function ()
 				'.htaccess',
 				'web.config'
 			],
-			cwd: 'vendor/redaxmedia/redaxscript/',
+			cwd: 'vendor/redaxscript/redaxscript/',
 			expand: true,
 			dot: true,
 			options:

@@ -14,10 +14,10 @@ install:
 - npm install --global ied
 - npm install --global grunt-cli
 - IED_CACHE_DIR=.tmp ied install
-- cd vendor/redaxmedia/redaxscript && IED_CACHE_DIR=.tmp ied install && cd -
+- cd vendor/redaxscript/redaxscript && IED_CACHE_DIR=.tmp ied install && cd -
 
 script:
-- grunt build --gruntfile vendor/redaxmedia/redaxscript/gruntfile.js
+- grunt build --gruntfile vendor/redaxscript/redaxscript/gruntfile.js
 - grunt
 
 after_success:
