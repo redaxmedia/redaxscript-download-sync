@@ -1,13 +1,14 @@
-module.exports = function (grunt, pathArray)
+module.exports = (grunt, pathArray) =>
 {
-	var cwd = 'vendor/redaxscript/redaxscript/',
-		directoryArray,
-		infoArray;
+	const cwd = 'vendor/redaxscript/redaxscript/';
 
-	pathArray.forEach(function (pathValue)
+	let directoryArray = [];
+	let infoArray = [];
+
+	pathArray.forEach(pathValue =>
 	{
 		directoryArray = grunt.file.expand(cwd + pathValue);
-		directoryArray.forEach(function (directoryValue)
+		directoryArray.forEach(directoryValue =>
 		{
 			infoArray = directoryValue.replace(cwd, '').split('.');
 			grunt.config.set('compress.' + infoArray[0],
