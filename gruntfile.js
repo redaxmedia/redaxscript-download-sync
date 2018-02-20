@@ -8,7 +8,8 @@ module.exports = grunt =>
 	{
 		version: grunt.file.readJSON('vendor/redaxscript/redaxscript/package.json').version,
 		shell: require('./tasks/shell')(grunt),
-		compress: require('./tasks/compress')(grunt)
+		compress: require('./tasks/compress')(grunt),
+		unzip: require('./tasks/unzip')(grunt)
 	});
 
 	/* dynamic compress */
@@ -32,5 +33,15 @@ module.exports = grunt =>
 	[
 		'shell:removeBuild',
 		'compress'
+	]);
+	grunt.registerTask('validateBuild',
+	[
+		'unzip:validateBuild',
+		'shell:removeValidate'
+	]);
+	grunt.registerTask('validateDownload',
+	[
+		'unzip:validateDownload',
+		'shell:removeValidate'
 	]);
 };

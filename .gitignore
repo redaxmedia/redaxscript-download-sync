@@ -2,4 +2,5 @@
 build
 download
 node_modules
+validate
 vendor

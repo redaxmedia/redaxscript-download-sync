@@ -8,6 +8,10 @@ module.exports = () =>
 		{
 			command: 'rm -rf build'
 		},
+		removeValidate:
+		{
+			command: 'rm -rf validate'
+		},
 		options:
 		{
 			stdout: true,

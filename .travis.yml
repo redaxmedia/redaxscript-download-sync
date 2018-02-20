@@ -21,10 +21,10 @@ script:
 - grunt
 
 after_success:
-- sh validate.sh build/*/*.zip
+- grunt validateBuild
 - lftp $FTP_URL -e "glob -d mirror build . --reverse --delete-first --parallel=10 && exit"
 - lftp $FTP_URL -e "glob -d mirror . download --delete-first --parallel=10 && exit"
-- sh validate.sh download/*/*.zip
+- grunt validateDownload
 
 notifications:
  email:
