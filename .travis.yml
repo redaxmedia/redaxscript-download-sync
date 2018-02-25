@@ -10,7 +10,7 @@ install:
 - sudo apt-get install lftp fontforge
 - composer self-update
 - composer install
-- nvm install 7
+- nvm install 9
 - npm install --global grunt-cli
 - npm install
 - cd vendor/redaxscript/redaxscript && npm install && cd -
