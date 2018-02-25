@@ -1,7 +1,7 @@
 language: php
 
 php:
-- 7.1
+- 7.2
 
 before_install:
 - composer global require hirak/prestissimo
@@ -10,11 +10,10 @@ install:
 - sudo apt-get install lftp fontforge
 - composer self-update
 - composer install
-- nvm install 6
-- npm install --global ied
+- nvm install 7
 - npm install --global grunt-cli
-- IED_CACHE_DIR=.tmp ied install
-- cd vendor/redaxscript/redaxscript && IED_CACHE_DIR=.tmp ied install && cd -
+- npm install
+- cd vendor/redaxscript/redaxscript && npm install && cd -
 
 script:
 - grunt build --gruntfile vendor/redaxscript/redaxscript/gruntfile.js
