@@ -21,8 +21,8 @@ script:
 
 after_success:
 - grunt validateBuild
-- lftp $FTP_URL -e "glob -d mirror build . --reverse --delete-first --parallel=10 && exit"
-- lftp $FTP_URL -e "glob -d mirror . download --delete-first --parallel=10 && exit"
+- grunt deploy
+- grunt download
 - grunt validateDownload
 
 notifications:

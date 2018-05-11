@@ -7,8 +7,9 @@ module.exports = grunt =>
 	grunt.initConfig(
 	{
 		version: grunt.file.readJSON('vendor/redaxscript/redaxscript/package.json').version,
-		shell: require('./tasks/shell')(grunt),
 		compress: require('./tasks/compress')(grunt),
+		ftpress: require('./tasks/ftpress')(grunt),
+		shell: require('./tasks/shell')(grunt),
 		unzip: require('./tasks/unzip')(grunt)
 	});
 
@@ -33,6 +34,14 @@ module.exports = grunt =>
 	[
 		'shell:removeBuild',
 		'compress'
+	]);
+	grunt.registerTask('deploy',
+	[
+		'ftpress:deploy'
+	]);
+	grunt.registerTask('download',
+	[
+		'ftpress:download'
 	]);
 	grunt.registerTask('validateBuild',
 	[
