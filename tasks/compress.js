@@ -4,55 +4,13 @@ module.exports = () =>
 
 	const config =
 	{
-		distDevelopment:
-		{
-			src:
-			[
-				'!dist',
-				'assets/**',
-				'benchs/**',
-				'cache/**',
-				'database/**',
-				'includes/**',
-				'languages/**',
-				'modules/**',
-				'tasks/**',
-				'templates/**',
-				'tests/**',
-				'config.php',
-				'console.php',
-				'index.php',
-				'install.php',
-				'.htaccess',
-				'.htmlhintrc',
-				'.jscsrc',
-				'.jshintrc',
-				'.stylelintrc',
-				'.tocgen',
-				'composer.json',
-				'gruntfile.js',
-				'package.json',
-				'phpcs.xml',
-				'phpunit.xml',
-				'README.md',
-				'web.config'
-			],
-			cwd: 'vendor/redaxscript/redaxscript/',
-			expand: true,
-			dot: true,
-			options:
-			{
-				archive: 'build/releases/redaxscript-<%= version %>-development.zip'
-			}
-		},
-		distProductionFull:
+		distFull:
 		{
 			src:
 			[
 				'assets/**',
 				'cache/**',
 				'database/**',
-				'dist/**',
 				'includes/**',
 				'languages/**',
 				'libraries/**',
@@ -71,10 +29,10 @@ module.exports = () =>
 			dot: true,
 			options:
 			{
-				archive: 'build/releases/redaxscript-<%= version %>-production-full.zip'
+				archive: 'build/releases/redaxscript-<%= version %>-full.zip'
 			}
 		},
-		distProductionLite:
+		distLite:
 		{
 			src:
 			[
@@ -86,7 +44,9 @@ module.exports = () =>
 				'languages/en.json',
 				'libraries/**',
 				'modules/CallHome/**',
-				'modules/Validator/**',
+				'modules/FormValidator/**',
+				'modules/HtmlValidator/**',
+				'modules/TextareaResizer/**',
 				'templates/admin/**',
 				'templates/console/**',
 				'templates/default/**',
@@ -104,7 +64,7 @@ module.exports = () =>
 			dot: true,
 			options:
 			{
-				archive: 'build/releases/redaxscript-<%= version %>-production-lite.zip'
+				archive: 'build/releases/redaxscript-<%= version %>-lite.zip'
 			}
 		}
 	};
