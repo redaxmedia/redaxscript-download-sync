@@ -46,6 +46,7 @@ module.exports = () =>
 				'modules/CallHome/**',
 				'modules/FormValidator/**',
 				'modules/HtmlValidator/**',
+				'modules/LiveReload/**',
 				'modules/TextareaResizer/**',
 				'templates/admin/**',
 				'templates/console/**',
