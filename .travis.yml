@@ -1,16 +1,19 @@
 language: php
 
-php:
-- 7.2
+php: 7.2
+
+addons:
+ apt:
+  packages:
+  - lftp
+  - fontforge
 
 before_install:
 - composer global require hirak/prestissimo
 
 install:
-- sudo apt-get install lftp fontforge
-- composer self-update
 - composer install
-- nvm install 9
+- nvm install 10
 - npm install --global grunt-cli
 - npm install
 - cd vendor/redaxscript/redaxscript && npm install && cd -
