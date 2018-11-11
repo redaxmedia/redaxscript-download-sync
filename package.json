@@ -13,9 +13,9 @@
 	{
 		"grunt": "1.0.3",
 		"grunt-contrib-compress": "1.4.3",
-		"grunt-ftpress": "1.0.2",
+		"grunt-ftpress": "1.1.2",
 		"grunt-shell": "2.1.0",
-		"grunt-zip": "0.17.1",
+		"grunt-zip": "0.18.1",
 		"load-grunt-tasks": "4.0.0"
 	}
 }
