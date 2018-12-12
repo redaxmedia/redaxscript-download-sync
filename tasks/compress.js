@@ -45,6 +45,7 @@ module.exports = () =>
 				'libraries/**',
 				'modules/AliasGenerator/**',
 				'modules/CallHome/**',
+				'modules/Dialog/**',
 				'modules/FormValidator/**',
 				'modules/HtmlValidator/**',
 				'modules/LiveReload/**',
