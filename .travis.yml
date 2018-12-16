@@ -24,8 +24,8 @@ script:
 
 after_success:
 - grunt validateBuild
-- grunt deploy
-- grunt download
+- grunt deploy --verbose
+- grunt download --verbose
 - grunt validateDownload
 
 notifications:
