@@ -39,8 +39,7 @@ module.exports = () =>
 		},
 		options:
 		{
-			url: process.env.FTP_URL,
-			verbose: true
+			url: process.env.FTP_URL
 		}
 	};
 
