@@ -16,7 +16,7 @@ module.exports = () =>
 				command:
 				[
 					'mirror {SOURCE} {TARGET} --reverse --delete-first --parallel=10 --use-pget-n=10',
-					'rm -r www/htdocs/w00976cb/redaxscript/cache/pages',
+					'rm -rf www/htdocs/w00976cb/redaxscript/cache/pages',
 					'exit'
 				]
 			}
