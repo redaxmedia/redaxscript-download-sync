@@ -15,7 +15,6 @@ module.exports = () =>
 			{
 				command:
 				[
-					'set ssl:verify-certificate=no',
 					'mirror {SOURCE} {TARGET} --reverse --delete-first --parallel=10 --use-pget-n=10',
 					'rm -rf www/htdocs/w00976cb/redaxscript/cache/pages',
 					'exit'
@@ -33,7 +32,6 @@ module.exports = () =>
 			{
 				command:
 				[
-					'set ssl:verify-certificate=no',
 					'mirror {SOURCE} {TARGET} --delete-first --parallel=10 --use-pget-n=10',
 					'exit'
 				]
