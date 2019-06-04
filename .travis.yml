@@ -7,13 +7,15 @@ addons:
   packages:
   - lftp
   - fontforge
+ ssh_known_hosts:
+ - w00976cb.kasserver.com
 
 before_install:
 - composer global require hirak/prestissimo
 
 install:
 - composer install
-- nvm install 10
+- nvm install 11
 - npm install --global grunt-cli
 - npm install
 - cd vendor/redaxscript/redaxscript && npm install && cd -
