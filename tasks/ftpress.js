@@ -10,7 +10,7 @@ module.exports = () =>
 			[
 				'build'
 			],
-			dest: 'www/htdocs/w00976cb/redaxscript/files',
+			dest: 'www/htdocs/w00976cb/redaxscript/_download',
 			options:
 			{
 				command:
@@ -25,7 +25,7 @@ module.exports = () =>
 		{
 			src:
 			[
-				'www/htdocs/w00976cb/redaxscript/files'
+				'www/htdocs/w00976cb/redaxscript/_download'
 			],
 			dest: 'download',
 			options:
