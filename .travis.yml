@@ -15,7 +15,7 @@ before_install:
 
 install:
 - composer install
-- nvm install 11
+- nvm install 10
 - npm install --global grunt-cli
 - npm install
 - cd vendor/redaxscript/redaxscript && npm install && cd -
