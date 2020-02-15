@@ -17,7 +17,7 @@ module.exports = (grunt, pathArray) =>
 				[
 					infoArray[1] ? infoArray[0] + '.' + infoArray[1] : infoArray[0] + '/**'
 				],
-				cwd: cwd,
+				cwd,
 				expand: true,
 				dot: true,
 				options:
