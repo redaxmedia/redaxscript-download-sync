@@ -51,6 +51,7 @@ module.exports = () =>
 				'modules/LiveReload/**',
 				'modules/TextareaResizer/**',
 				'modules/TableSorter/**',
+				'modules/UnmaskPassword/**',
 				'templates/admin/**',
 				'templates/console/**',
 				'templates/default/**',
