@@ -43,6 +43,7 @@ module.exports = () =>
 				'languages/en.json',
 				'libraries/**',
 				'modules/AliasGenerator/**',
+				'modules/CallHome/**',
 				'modules/ConfirmAction',
 				'modules/Dialog/**',
 				'modules/FormValidator/**',
