@@ -6,7 +6,6 @@ addons:
  apt:
   packages:
   - lftp
-  - fontforge
  ssh_known_hosts:
  - w00976cb.kasserver.com
 
