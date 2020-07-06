@@ -47,6 +47,8 @@ module.exports = () =>
 				'modules/ConfirmAction/**',
 				'modules/Dialog/**',
 				'modules/FormValidator/**',
+				'modules/HtmlValidator/**',
+				'modules/LiveReload/**',
 				'modules/RankSorter/**',
 				'modules/TextareaResizer/**',
 				'modules/UnmaskPassword/**',
