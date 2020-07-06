@@ -44,7 +44,7 @@ module.exports = () =>
 				'libraries/**',
 				'modules/AliasGenerator/**',
 				'modules/CallHome/**',
-				'modules/ConfirmAction',
+				'modules/ConfirmAction/**',
 				'modules/Dialog/**',
 				'modules/FormValidator/**',
 				'modules/RankSorter/**',
