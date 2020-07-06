@@ -6,7 +6,6 @@ addons:
  apt:
   packages:
   - lftp
-  - fontforge
  ssh_known_hosts:
  - w00976cb.kasserver.com
 
@@ -15,7 +14,7 @@ before_install:
 
 install:
 - composer install
-- nvm install 12
+- nvm install 14
 - npm install --global grunt-cli
 - npm install
 - cd vendor/redaxscript/redaxscript && npm install && cd -
