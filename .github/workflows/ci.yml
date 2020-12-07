@@ -21,11 +21,11 @@ jobs:
   - run: npm install
   - run: grunt build --gruntfile=vendor/redaxscript/redaxscript/gruntfile.js
   - run: grunt compress
-  - run: grunt validateBuild
-  - run: grunt _deploy
+  - run: grunt validate-build
+  - run: grunt deploy
     env:
      FTP_URL: ${{ secrets.FTP_URL }}
-  - grunt download
+  - run: grunt download
     env:
      FTP_URL: ${{ secrets.FTP_URL }}
-  - grunt validateDownload
+  - run: grunt validate-download
