@@ -10,7 +10,7 @@
 	},
 	"require-dev":
 	{
-		"redaxscript/redaxscript": "dev-master"
+		"redaxscript/redaxscript": "4.4.0"
 	},
 	"scripts":
 	{
