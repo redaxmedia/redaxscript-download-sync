@@ -8,33 +8,33 @@ module.exports = () =>
 			[
 				'build'
 			],
-			dest: 'www/htdocs/w00976cb/redaxscript/_download',
+			dest: 'redaxscript/_download',
 			options:
 			{
-				command:
+				commandArray:
 				[
-					'set sftp:auto-confirm yes',
 					'mirror {SOURCE} {TARGET} --reverse --delete-first --parallel=10 --use-pget-n=10',
-					'rm -rf www/htdocs/w00976cb/redaxscript/cache/pages',
+					'rm -rf redaxscript/cache/pages',
 					'exit'
-				]
+				],
+				haltOnError: true
 			}
 		},
 		download:
 		{
 			src:
 			[
-				'www/htdocs/w00976cb/redaxscript/_download'
+				'redaxscript/_download'
 			],
 			dest: 'download',
 			options:
 			{
-				command:
+				commandArray:
 				[
-					'set sftp:auto-confirm yes',
 					'mirror {SOURCE} {TARGET} --delete-first --parallel=10 --use-pget-n=10',
 					'exit'
-				]
+				],
+				haltOnError: true
 			}
 		},
 		options:

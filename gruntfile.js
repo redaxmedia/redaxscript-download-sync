@@ -15,7 +15,7 @@ module.exports = grunt =>
 
 	/* dynamic compress */
 
-	require('./tasks/dynamic_compress')(grunt,
+	require('./tasks/dynamic-compress')(grunt,
 	[
 		'languages/*.json',
 		'modules/*',
@@ -43,12 +43,12 @@ module.exports = grunt =>
 	[
 		'ftpress:download'
 	]);
-	grunt.registerTask('validateBuild',
+	grunt.registerTask('validate-build',
 	[
 		'unzip:validateBuild',
 		'shell:removeValidate'
 	]);
-	grunt.registerTask('validateDownload',
+	grunt.registerTask('validate-download',
 	[
 		'unzip:validateDownload',
 		'shell:removeValidate'
